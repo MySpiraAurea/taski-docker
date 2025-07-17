@@ -88,8 +88,9 @@ jobs:
           # на сервере и в docker-compose.yml не указывать версию
           tags: myspiraaurea/taski_backend:latest 
   
-    frontend_tests:
+  frontend_tests:
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v3
     - name: Set up nodeJS
@@ -130,8 +131,8 @@ jobs:
           context: ./frontend/
           push: true
           tags: myspiraaurea/taski_frontend:latest
-  
-    build_gateway_and_push_to_docker_hub:
+
+  build_gateway_and_push_to_docker_hub:
     name: Push gateway Docker image to DockerHub
     runs-on: ubuntu-latest
     steps:
